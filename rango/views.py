@@ -1,15 +1,13 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.http import HttpResponse
     
 def index(request):
-    return HttpResponse("Rango says hey there partner!")
+    # Construct a dictionary to pass to the template engine as its context.
+# Note the key boldmessage is the same as {{ boldmessage }} in the template! 
+   context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
+# Return a rendered response to send to the client.
+# We make use of the shortcut function to make our lives easier. # Note that the first parameter is the template we wish to use. 
+   return render(request, 'rango/index.html', context=context_dict)
 
-def about(requst):
-     return HttpResponse("Rango says here is the about page. <a href='/rango/'>Index</a>.")
-=======
-
-from django.http import HttpResponse
-def index(request):
-    return HttpResponse("Rango says hey there partner!")cd Workspace
->>>>>>> 13f636113faafbad0fa0f7ac26e56c98c53af54f
+def about(request):
+    return render(request,'rango/about.html')
