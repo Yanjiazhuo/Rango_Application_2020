@@ -14,4 +14,10 @@ class Migration(migrations.Migration):
             name='category',
             options={'verbose_name_plural': 'Categories'},
         ),
+        migrations.AddField(
+             model_name='category',
+             name='slug',
+             field=models.SlugField(default=''),
+             preserve_default=False,
+        ),
     ]
