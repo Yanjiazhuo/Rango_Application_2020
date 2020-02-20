@@ -104,9 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    'OPTIONS': { 'min_length': 6, }
     },
+    
 ]
-
+LOGIN_URL = 'rango:login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
